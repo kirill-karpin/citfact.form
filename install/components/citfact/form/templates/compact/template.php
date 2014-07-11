@@ -8,6 +8,13 @@ if (file_exists($path . '/user_type.php')) {
     include $path . '/user_type.php';
 }
 
+	if (!class_exists('InputHelper')) {
+
+		if (file_exists($_SERVER["DOCUMENT_ROOT"] . $templateFolder . "/InputHelper.php")) require_once ($_SERVER["DOCUMENT_ROOT"] . $templateFolder."/InputHelper.php");
+
+	}
+
+
 if (!$arResult['IS_AJAX']) {
 
     $APPLICATION->AddHeadScript($templateFolder . '/script.js');
